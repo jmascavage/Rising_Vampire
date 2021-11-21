@@ -18,7 +18,7 @@ const int soundTriggerPin = 30;       // soundTriggerPin is the pin # linked to 
 // establish variables for ultrasonic distance sensor
 long duration, inches, countOfHits, counter;
 
-boolean serialOn = false; //sometimes writing to Serial hangs board, so this flag turns off writing to Serial in log()
+boolean serialOn = true; //sometimes writing to Serial hangs board, so this flag turns off writing to Serial in log()
 #define RLED RED_LED
 #define GLED GREEN_LED
 #define BLED BLUE_LED
@@ -141,4 +141,3 @@ void log(String logLine)
 {
   if(serialOn) Serial.println(String(millis()) + ": " + logLine);
 }
-
